@@ -7,3 +7,6 @@
 .text-blue{
     color: #393280;
 }
+.home-bg{
+    background-image: linear-gradient(to right,#FFE5E5 22%,white 100%);
+}
