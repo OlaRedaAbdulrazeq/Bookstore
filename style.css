@@ -13,3 +13,11 @@
 .home-bg{
     background-image: linear-gradient(to right,#FFE5E5 22%,white 100%);
 }
+/* //////////////////////////sign up style///////////////// */
+
+.btn.bg-orange:hover,
+.btn.bg-orange:active {
+    background-color: #ED553B !important;
+    color: #fff !important;
+    box-shadow: none; /* optional: remove Bootstrap focus shadow */
+}
