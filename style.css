@@ -7,3 +7,40 @@
 .text-blue{
     color: #393280;
 }
+/* //////////////////////////blog style////////////////////////////////// */
+.blog-body { background-color: #f8f9fa; }
+  .img-small {
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  .card:hover .img-small {
+    transform: scale(1.05);
+    filter: blur(0);
+  }
+  .card-title { margin-top: 20%; font-weight: 600; }
+  .card-text { margin-top: 5%; }
+  .btn-blog {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 2px;
+    padding: 12px 40px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    z-index: 10;
+  }
+  .btn-blog:hover { background: white; color: black; transform: scale(1.05); }
+  .center-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .card { position: relative; overflow: hidden; }
+  
+  body.dark-mode { background: #121212; color: white; }
+  body.dark-mode .card { background: #222; }

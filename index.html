@@ -71,7 +71,84 @@
         </nav>
 
     </header>
+    <main>
+        <!-- Blog -->
+    <section class="blog-body">
+        <div class="container mt-4">
+        <h2 class="text-center mb-4">Read our many Blogs</h2>
+        <div class="d-flex justify-content-end my-3">
+        <button id="darkModeBtn" class="btn btn-secondary" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+        </div>
+        <!-- Search Bar that u can filter in blog name -->
+        <div class="row mb-4">
+            <div class="col-md-6 offset-md-3">
+            <input type="text" id="search" class="form-control" placeholder="Search blogs..." onkeyup="filterBlogs()">
+            </div>
+        </div>
+        <div class="row" id="blog-container">
+            <!-- Blog Card with photo and everything -->
+            <div class="col-sm-12 col-md-6 col-lg-6 mb-4 blog-card">
+            <div class="card text-white position-relative">
+                <img class="img-small card-img" src="assets/bl1.jpeg" alt="Top Author">
+                <div class="card-img-overlay d-flex flex-column justify-content-end p-3" style="background: rgba(0,0,0,0.3);">
+                <h4 class="card-title">Learn about this week&#39;s Top Author</h4>
+                <p class="card-text">Jump start your book reading by quickly checking through popular book categories.</p>
+                </div>
+            
+                <a href="#" class="btn-blog center-btn" onclick="openModal('Learn about this week\'s Top Author','Jump start your book reading by quickly checking through popular book categories.')">Read More</a>
+            </div>
+            </div>
 
+            
+            <div class="col-sm-12 col-md-6 col-lg-6 mb-4 blog-card">
+            <div class="card text-white position-relative">
+                <img class="img-small card-img" src="assets/bl2.jpeg" alt="Readers Celebration">
+                <div class="card-img-overlay d-flex flex-column justify-content-end p-3" style="background: rgba(0,0,0,0.3);">
+                <h4 class="card-title">Why we celebrate readers</h4>
+                <p class="card-text">Jump start your book reading by quickly checking through popular book categories.</p>
+                </div>
+                <a href="#" class="btn-blog center-btn" onclick="openModal('Why we celebrate readers','Jump start your book reading by quickly checking through popular book categories.')">Read More</a>
+            </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-6 mb-4 blog-card">
+            <div class="card text-white position-relative">
+                <img class="img-small card-img" src="assets/bl3.jpeg" alt="Get Started on Game">
+                <div class="card-img-overlay d-flex flex-column justify-content-end p-3" style="background: rgba(0,0,0,0.3);">
+                <h4 class="card-title">Get started on your game</h4>
+                <p class="card-text">Jump start your book reading by quickly checking through popular book categories.</p>
+                </div>
+                <a href="#" class="btn-blog center-btn" onclick="openModal('Get started on your game','Jump start your book reading by quickly checking through popular book categories.')">Read More</a>
+            </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-6 mb-4 blog-card">
+            <div class="card text-white position-relative">
+                <img class="img-small card-img" src="assets/bl4.jpg" alt="Toddlers Read" style="filter: blur(5px);">
+                <div class="card-img-overlay d-flex flex-column justify-content-end p-3" style="background: rgba(0,0,0,0.3);">
+                <h4 class="card-title">Toddlers can also Read</h4>
+                <p class="card-text">Jump start your book reading by quickly checking through popular book categories.</p>
+                </div>
+                <a href="#" class="btn-blog center-btn" onclick="openModal('Toddlers can also Read','Jump start your book reading by quickly checking through popular book categories.')">Read More</a>
+            </div>
+            </div>
+        </div>
+        </div>
+        <div class="modal fade" id="blogModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-dark">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle">Blog Title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                Blog content goes here...
+            </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    </main>
     <!-- Footer -->
     <footer class="container-fluid text-light bg-orange py-5 px-3">
         <div class="container">
@@ -116,5 +193,6 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
 </body>
 </html>
