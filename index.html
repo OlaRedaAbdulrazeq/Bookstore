@@ -72,6 +72,68 @@
 
     </header>
     <main>
+        <!-- Featured Book -->
+         <section class="featured-body">
+            <!-- fetured book  image with title and description-->
+            <div class="container mt-4">
+                <div class="card card-custom d-flex flex-row align-items-stretch p-0 shadow">
+
+                    <img src="assets/fbook.jpeg" class="img-fit" alt="Book Cover">
+
+                    <div class="card-body d-flex flex-column justify-content-start">
+
+                        <h3 class="card-title mb-2">Featured Book</h3>
+                        <h6 class="text-dark-orange fw-bold mb-1">─────────</h6>
+                        <h6 class="fw-bold mb-2">By TIMBUR HOOD</h6>
+
+                        <h3 class="card-title mb-2">Bird Gonna be Happy</h3>
+
+                        <p class="card-text mb-3 lh-lg" id="description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac.
+                        </p>
+
+                        <h6 class="text-dark-orange fw-bold fs-5 mb-2">
+                            $ <span id="price">45</span>
+                        </h6>
+            <!--quaninty of items starting from 1 to as much as u want-->
+                        
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <button class="btn btn-outline-dark btn-sm" onclick="changeQty(-1)">-</button>
+                            <span id="quantity">1</span>
+                            <button class="btn btn-outline-dark btn-sm" onclick="changeQty(1)">+</button>
+                        </div>
+
+                        <p class="fw-bold mb-3">
+                            Total: $ <span id="total">45</span>
+                        </p>
+            <!-- stars rating from 1 to 5 and it displays below the star number you rated-->
+                        
+                        <div class="mb-3">
+                            <span class="star" onclick="rate(1)">⭐</span>
+                            <span class="star" onclick="rate(2)">⭐</span>
+                            <span class="star" onclick="rate(3)">⭐</span>
+                            <span class="star" onclick="rate(4)">⭐</span>
+                            <span class="star" onclick="rate(5)">⭐</span>
+                            <span id="rating-text" class="ms-2"></span>
+                        </div>
+
+                    
+                        <div class="mlogn mb-3">
+                    <a href="product.html" class="login-btn">
+            View More ─>
+            </a>
+                            <input type="button" value="Add to Cart" class="login-btn" onclick="addToCart()">
+                        </div>
+
+                    
+                        <div id="alertBox" class="alert alert-success d-none mt-2">
+                            Book added to cart successfully!
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
         <!-- Blog -->
     <section class="blog-body">
         <div class="container mt-4">
