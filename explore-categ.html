@@ -1,0 +1,176 @@
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<style>
+.text-dark-orange {
+    color: #cc5500;
+}
+
+.card-til{
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(18, 2, 81);
+    font-size: 40px;
+}
+
+.card-title{
+    color: rgb(18, 2, 81);
+}
+
+.login-btn {
+    flex: 1;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+.mlogn {
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+    width:10%;
+    margin-left:45%;
+}
+
+.card-img-top{
+    height: 250px;
+    object-fit: cover;
+}
+ .card-custom {
+            background-color: #F5F5F3;
+        }
+
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 35px;
+    height: 35px;
+    background-color: #cc5500;
+    border-radius: 50%;
+    top: -50px;       
+    opacity: 1;
+}
+
+.carousel-control-prev {
+    left: auto;
+    right: 50px;     
+}
+
+.carousel-control-next {
+    right: 0;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-size: 60% 60%;
+    filter: invert(1); 
+}
+</style>
+</head>
+
+<body class="p-4">
+
+<h6 class="text-dark-orange fw-bold fs-4 mb-3">
+─── Categories
+</h6>
+
+<h3 class="card-til mb-5">
+Explore Our Top Categories
+</h3>
+<!-- div in which has the carousel that slides between each book with arrow from left to right-->
+<div id="categoryCarousel" class="carousel slide position-relative">
+
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="card">
+               
+                <img src="bks.jpeg" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Higher Education</h5>
+                    <p class="card-text"><small class="text-muted">Last updated 45 mins ago</small></p>
+                </div>
+            </div>
+        </div>
+<!-- each carousel added to each card -->
+        <div class="carousel-item">
+            <div class="card">
+                <img src="ofc.jpeg" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Management Books</h5>
+                    <p class="card-text"><small class="text-muted">Last updated 6 mins ago</small></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <div class="card">
+                <img src="lap.jpeg" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Engineering Books</h5>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+<!--carousseel buttons of arrows-->
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#categoryCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#categoryCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </button>
+    <!-- ads that display the promotion or discounr provided in yellow-->
+<section class="bg-warning text-dark text-center py-4 rounded mt-5">
+    <h5 class="fw-bold">🎉 30% OFF on All Engineering Books – Limited Time!</h5>
+</section>
+
+</div>
+<!--view more button like the other page-->
+<div class="mlogn mt-4">
+    <input type="button" value="View More ─>" class="login-btn ">
+</div>
+<!-- comments like section in which people give their opinion-->
+<section class="mt-5">
+    <h4 class="fw-bold mb-4">What Our Customers Say</h4>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="p-4 shadow-sm rounded bg-light">
+                <p>"Amazing quality books and fast delivery!"</p>
+                <small class="text-muted">– Ahmed M.</small>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="p-4 shadow-sm rounded bg-light">
+                <p>"Best engineering collection I've found online."</p>
+                <small class="text-muted">– Sara K.</small>
+            </div>
+        </div>
+         <div class="col-md-6">
+            <div class="p-4 shadow-sm rounded bg-light">
+                <p>"Great managment books found it pretty useful and full of interesting concepts!!"</p>
+                <small class="text-muted">– malak S.</small>
+            </div>
+            </div>
+            <div class="col-md-6">
+            <div class="p-4 shadow-sm rounded bg-light">
+                <p>"You can find pretty much any book that fits your interests and with authentic version i recommened this store"</p>
+                <small class="text-muted">– Khaled A.</small>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+</body>
+</html>

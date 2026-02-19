@@ -1,0 +1,226 @@
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <style>
+
+.card-title{
+    font-family:sans-serif;
+    color:rgb(18, 2, 81);
+   margin-bottom:70%;
+   font-size:40px;
+}
+.text-dark-orange {
+    color: #cc5500;
+}
+
+.card-custom {
+    background-color: #F5F5F3;   
+}
+.card-text{
+     color:rgb(18, 2, 81);
+}
+.img-fit {
+    width: 470px;
+    height: 100%;
+    object-fit: cover;
+}
+.mlogn {
+  display: flex;          
+  max-width: 500px;        
+}
+
+.email-field {
+  flex: 1;                 
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-right: none;      
+  border-radius: 2px 0 0 5px; 
+  background-color: white;
+  font-size: 1rem;
+}
+
+.login-btn {
+  padding: 10px 38px;
+  border: 1px solid #f1480a;
+  border-radius: 0 5px 5px 0;  
+  background-color: #f1480a;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  font-style:bold;
+  transition: background 0.3s;
+}
+.pass-field{
+  font-size: 1rem;
+  
+  width:50%;
+  border-radius: 2px 0 0 2px; 
+    border: 1px solid #ccc;
+}
+
+        </style>
+          </head>
+        <body>
+           <body>
+<!--image and containerr-->
+<div class="container mt-5">
+
+  <div class="card card-custom d-flex flex-row-reverse align-items-stretch p-0" style="overflow: hidden;">
+
+    <img src="Logbook.jpeg" class="img-fit">
+
+
+    <div class="card-body d-flex flex-column justify-content-start pt-4 px-4">
+
+     
+      <h6 class="text-dark-orange fw-bold fs-4 mb-3">
+        ─── ebook
+      </h6>
+
+ <!--title-->
+      <h3 class="card-title mb-3">
+  Access, Read, Practice & Engage with Digital Content (eBook)
+</h3>
+
+<p class="card-text mb-3 lh-lg">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac. Urna commodo, lacus ut magna velit eleifend. Amet, quis urna, a eu. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</p>
+<!--log in fields and buttons-->
+<div class="mlogn mb-3">
+  <input type="email" placeholder="Enter your Email Address" class="email-field"id="email">
+  <div id="email_error" hidden></div>
+  <input type="password" placeholder="Enter your password " class="pass-field"id="password">
+  <div id="password_error" hidden></div>
+<input type="button" value="Log in" class="login-btn" onclick="loginUser()">
+<p id="message"></p>
+
+
+
+
+
+</div>
+<div id="email_error" hidden></div>
+
+  </div>
+
+</div>
+
+
+
+
+</div>
+
+<script>
+  //connection of api and supa base
+   const API_url="https://dqcddwgtbiowtymwxtur.supabase.co/rest/v1/Log_in"
+        const API_key="sb_publishable_TND3y-Rt4NF0o50wJiTRbw_bhBR5WIS"
+            const headers={
+      "apikey":API_key,
+   "Authorization": "Bearer"+API_key,
+   "Content-Type":"application/json"
+            }
+      async function getLogin(){
+               let login= await fetch (API_url,{headers})
+               let login_res= await login.json()
+               console.log(login_res)
+               let table=document.getElementById("loginTable")
+              
+      }
+         //  function to add  email and password once logged in
+           async function addLogin(e){
+   
+            let email=document.getElementById("email").value
+    let password=document.getElementById("password").value
+           
+          
+      
+let login={
+   "email":email,
+"password": password
+}
+let result=await fetch(API_url,{method:"post",body:JSON.stringify(login),headers})
+        
+console.log(result.status)
+        
+if(result.status==201){
+    getLogin()
+}
+else{
+    console.log("error")
+}
+}
+// function log in to verify that email and password exists using api
+async function loginUser() {
+
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password").value;
+  
+
+  const response = await fetch(
+    API_url + "?email=eq." + email,
+    { headers: headers }
+  );
+
+  const data = await response.json();
+
+  console.log(data);
+
+
+  if (data.length === 0) {
+    message.textContent = "User not found!";
+        message.style.color = "red";
+    return;
+  }
+
+  if (data[0].password !== password) {
+    message.textContent = "Incorrect password!";
+    message.style.color = "red";
+     
+    return;
+  }
+
+
+   message.textContent = "Login successful!";
+  message.style.color = "green";
+}
+
+
+
+// function to display error message if the email is empty or password is left empty
+
+   function emailVer() {
+
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    let password_error = document.getElementById("password_error");
+    let email_error = document.getElementById("email_error");
+
+    email_error.style.color = "red";
+    password_error.style.color = "red";
+
+    if (email === "") {
+        email_error.textContent = "Email is required";
+        email_error.hidden = false;
+    } else {
+        email_error.hidden = true;
+    }
+
+    if (password === "") {
+        password_error.textContent = "Password is required";
+        password_error.hidden = false;
+    } else {
+        password_error.hidden = true;
+    }
+
+    console.log("done");
+}
+
+    
+  
+
+</script>
+</body>
+
+ 
+</html>

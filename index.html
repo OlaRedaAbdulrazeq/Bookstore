@@ -71,7 +71,280 @@
         </nav>
 
     </header>
+    <main>
+        <!-- explore Categ -->
+         <section class="explore-body p-4">
+            <h6 class="text-dark-orange fw-bold fs-4 mb-3">
+            ─── Categories
+            </h6>
 
+            <h3 class="card-til mb-5">
+            Explore Our Top Categories
+            </h3>
+            <!-- div in which has the carousel that slides between each book with arrow from left to right-->
+            <div id="categoryCarousel" class="carousel slide position-relative">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="card">
+                        
+                            <img src="assets/bks.jpeg" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Higher Education</h5>
+                                <p class="card-text"><small class="text-muted">Last updated 45 mins ago</small></p>
+                            </div>
+                        </div>
+                    </div>
+            <!-- each carousel added to each card -->
+                    <div class="carousel-item">
+                        <div class="card">
+                            <img src="assets/ofc.jpeg" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Management Books</h5>
+                                <p class="card-text"><small class="text-muted">Last updated 6 mins ago</small></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="card">
+                            <img src="assets/lap.jpeg" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Engineering Books</h5>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <!--carousseel buttons of arrows-->
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#categoryCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+
+                <button class="carousel-control-next" type="button" data-bs-target="#categoryCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+                <!-- ads that display the promotion or discounr provided in yellow-->
+            <section class="bg-warning text-dark text-center py-4 rounded mt-5">
+                <h5 class="fw-bold">🎉 30% OFF on All Engineering Books – Limited Time!</h5>
+            </section>
+
+            </div>
+            <!--view more button like the other page-->
+            <div class="mlogn mt-4">
+                <input type="button" value="View More ─>" class="login-btn ">
+            </div>
+            <!-- comments like section in which people give their opinion-->
+            <section class="mt-5">
+                <h4 class="fw-bold mb-4">What Our Customers Say</h4>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="p-4 shadow-sm rounded bg-light">
+                            <p>"Amazing quality books and fast delivery!"</p>
+                            <small class="text-muted">– Ahmed M.</small>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="p-4 shadow-sm rounded bg-light">
+                            <p>"Best engineering collection I've found online."</p>
+                            <small class="text-muted">– Sara K.</small>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-4 shadow-sm rounded bg-light">
+                            <p>"Great managment books found it pretty useful and full of interesting concepts!!"</p>
+                            <small class="text-muted">– malak S.</small>
+                        </div>
+                        </div>
+                        <div class="col-md-6">
+                        <div class="p-4 shadow-sm rounded bg-light">
+                            <p>"You can find pretty much any book that fits your interests and with authentic version i recommened this store"</p>
+                            <small class="text-muted">– Khaled A.</small>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <!-- Featured Book -->
+         <section class="featured-body">
+            <!-- fetured book  image with title and description-->
+            <div class="container mt-4">
+                <div class="card card-custom d-flex flex-row align-items-stretch p-0 shadow">
+
+                    <img src="assets/fbook.jpeg" class="img-fit" alt="Book Cover">
+
+                    <div class="card-body d-flex flex-column justify-content-start">
+
+                        <h3 class="card-title mb-2">Featured Book</h3>
+                        <h6 class="text-dark-orange fw-bold mb-1">─────────</h6>
+                        <h6 class="fw-bold mb-2">By TIMBUR HOOD</h6>
+
+                        <h3 class="card-title mb-2">Bird Gonna be Happy</h3>
+
+                        <p class="card-text mb-3 lh-lg" id="description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac.
+                        </p>
+
+                        <h6 class="text-dark-orange fw-bold fs-5 mb-2">
+                            $ <span id="price">45</span>
+                        </h6>
+            <!--quaninty of items starting from 1 to as much as u want-->
+                        
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <button class="btn btn-outline-dark btn-sm" onclick="changeQty(-1)">-</button>
+                            <span id="quantity">1</span>
+                            <button class="btn btn-outline-dark btn-sm" onclick="changeQty(1)">+</button>
+                        </div>
+
+                        <p class="fw-bold mb-3">
+                            Total: $ <span id="total">45</span>
+                        </p>
+            <!-- stars rating from 1 to 5 and it displays below the star number you rated-->
+                        
+                        <div class="mb-3">
+                            <span class="star" onclick="rate(1)">⭐</span>
+                            <span class="star" onclick="rate(2)">⭐</span>
+                            <span class="star" onclick="rate(3)">⭐</span>
+                            <span class="star" onclick="rate(4)">⭐</span>
+                            <span class="star" onclick="rate(5)">⭐</span>
+                            <span id="rating-text" class="ms-2"></span>
+                        </div>
+
+                    
+                        <div class="mlogn mb-3">
+                    <a href="product.html" class="login-btn">
+            View More ─>
+            </a>
+                            <input type="button" value="Add to Cart" class="login-btn" onclick="addToCart()">
+                        </div>
+
+                    
+                        <div id="alertBox" class="alert alert-success d-none mt-2">
+                            Book added to cart successfully!
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Blog -->
+    <section class="blog-body">
+        <div class="container mt-4">
+        <h2 class="text-center mb-4">Read our many Blogs</h2>
+        <div class="d-flex justify-content-end my-3">
+        <button id="darkModeBtn" class="btn btn-secondary" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+        </div>
+        <!-- Search Bar that u can filter in blog name -->
+        <div class="row mb-4">
+            <div class="col-md-6 offset-md-3">
+            <input type="text" id="search" class="form-control" placeholder="Search blogs..." onkeyup="filterBlogs()">
+            </div>
+        </div>
+        <div class="row" id="blog-container">
+            <!-- Blog Card with photo and everything -->
+            <div class="col-sm-12 col-md-6 col-lg-6 mb-4 blog-card">
+            <div class="card text-white position-relative">
+                <img class="img-small card-img" src="assets/bl1.jpeg" alt="Top Author">
+                <div class="card-img-overlay d-flex flex-column justify-content-end p-3" style="background: rgba(0,0,0,0.3);">
+                <h4 class="card-title">Learn about this week&#39;s Top Author</h4>
+                <p class="card-text">Jump start your book reading by quickly checking through popular book categories.</p>
+                </div>
+            
+                <a href="#" class="btn-blog center-btn" onclick="openModal('Learn about this week\'s Top Author','Jump start your book reading by quickly checking through popular book categories.')">Read More</a>
+            </div>
+            </div>
+
+            
+            <div class="col-sm-12 col-md-6 col-lg-6 mb-4 blog-card">
+            <div class="card text-white position-relative">
+                <img class="img-small card-img" src="assets/bl2.jpeg" alt="Readers Celebration">
+                <div class="card-img-overlay d-flex flex-column justify-content-end p-3" style="background: rgba(0,0,0,0.3);">
+                <h4 class="card-title">Why we celebrate readers</h4>
+                <p class="card-text">Jump start your book reading by quickly checking through popular book categories.</p>
+                </div>
+                <a href="#" class="btn-blog center-btn" onclick="openModal('Why we celebrate readers','Jump start your book reading by quickly checking through popular book categories.')">Read More</a>
+            </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-6 mb-4 blog-card">
+            <div class="card text-white position-relative">
+                <img class="img-small card-img" src="assets/bl3.jpeg" alt="Get Started on Game">
+                <div class="card-img-overlay d-flex flex-column justify-content-end p-3" style="background: rgba(0,0,0,0.3);">
+                <h4 class="card-title">Get started on your game</h4>
+                <p class="card-text">Jump start your book reading by quickly checking through popular book categories.</p>
+                </div>
+                <a href="#" class="btn-blog center-btn" onclick="openModal('Get started on your game','Jump start your book reading by quickly checking through popular book categories.')">Read More</a>
+            </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-6 mb-4 blog-card">
+            <div class="card text-white position-relative">
+                <img class="img-small card-img" src="assets/bl4.jpg" alt="Toddlers Read" style="filter: blur(5px);">
+                <div class="card-img-overlay d-flex flex-column justify-content-end p-3" style="background: rgba(0,0,0,0.3);">
+                <h4 class="card-title">Toddlers can also Read</h4>
+                <p class="card-text">Jump start your book reading by quickly checking through popular book categories.</p>
+                </div>
+                <a href="#" class="btn-blog center-btn" onclick="openModal('Toddlers can also Read','Jump start your book reading by quickly checking through popular book categories.')">Read More</a>
+            </div>
+            </div>
+        </div>
+        </div>
+        <div class="modal fade" id="blogModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-dark">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle">Blog Title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                Blog content goes here...
+            </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- Log in  -->
+    <section class="login-body">
+        <!--image and containerr-->
+        <div class="container mt-5">
+
+            <div class="card card-custom d-flex flex-row-reverse align-items-stretch p-0" style="overflow: hidden;">
+
+            <img src="assets/Logbook.jpeg" class="img-fit">
+
+
+            <div class="card-body d-flex flex-column justify-content-start pt-4 px-4">
+
+            
+                <h6 class="text-dark-orange fw-bold fs-4 mb-3">
+                ─── ebook
+                </h6>
+
+        <!--title-->
+                <h3 class="card-title mb-3">
+            Access, Read, Practice & Engage with Digital Content (eBook)
+            </h3>
+
+            <p class="card-text mb-3 lh-lg">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac. Urna commodo, lacus ut magna velit eleifend. Amet, quis urna, a eu. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+            <!--log in fields and buttons-->
+            <div class="mlogn mb-3">
+                <input type="email" placeholder="Enter your Email Address" class="email-field"id="email">
+                <div id="email_error" hidden></div>
+                <input type="password" placeholder="Enter your password " class="pass-field"id="password">
+                <div id="password_error" hidden></div>
+                <input type="button" value="Log in" class="login-btn" onclick="loginUser()">
+                <p id="message"></p>
+            </div>
+            <div id="email_error" hidden></div>
+        </div>
+        </div>
+        </div>
+    </section>
+    </main>
     <!-- Footer -->
     <footer class="container-fluid text-light bg-orange py-5 px-3">
         <div class="container">
@@ -116,5 +389,6 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
 </body>
 </html>
