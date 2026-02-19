@@ -203,3 +203,58 @@
   
   body.dark-mode { background: #121212; color: white; }
   body.dark-mode .card { background: #222; }
+/* //////////////////////////log in style //////////////////////////// */
+.card-title{
+    font-family:sans-serif;
+    color:rgb(18, 2, 81);
+   margin-bottom:70%;
+   font-size:40px;
+}
+.text-dark-orange {
+    color: #cc5500;
+}
+
+.card-custom {
+    background-color: #F5F5F3;   
+}
+.card-text{
+     color:rgb(18, 2, 81);
+}
+.img-fit {
+    width: 470px;
+    height: 100%;
+    object-fit: cover;
+}
+.mlogn {
+  display: flex;          
+  max-width: 500px;        
+}
+
+.email-field {
+  flex: 1;                 
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-right: none;      
+  border-radius: 2px 0 0 5px; 
+  background-color: white;
+  font-size: 1rem;
+}
+
+.login-btn {
+  padding: 10px 38px;
+  border: 1px solid #f1480a;
+  border-radius: 0 5px 5px 0;  
+  background-color: #f1480a;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  font-style:bold;
+  transition: background 0.3s;
+}
+.pass-field{
+  font-size: 1rem;
+  
+  width:50%;
+  border-radius: 2px 0 0 2px; 
+    border: 1px solid #ccc;
+}
