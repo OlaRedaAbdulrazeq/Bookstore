@@ -7,11 +7,73 @@
 .text-blue{
     color: #393280;
 }
+/* ///////////////////////////Explore Categ///////////////////////////// */
+.text-dark-orange {
+    color: #cc5500;
+}
+
+.card-til{
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(18, 2, 81);
+    font-size: 40px;
+}
+
+.card-title{
+    color: rgb(18, 2, 81);
+}
+
+.login-btn {
+    flex: 1;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+.mlogn {
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+    width:10%;
+    margin-left:45%;
+}
+
+.card-img-top{
+    height: 250px;
+    object-fit: cover;
+}
+ .card-custom {
+            background-color: #F5F5F3;
+        }
+
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 35px;
+    height: 35px;
+    background-color: #cc5500;
+    border-radius: 50%;
+    top: -50px;       
+    opacity: 1;
+}
+
+.carousel-control-prev {
+    left: auto;
+    right: 50px;     
+}
+
+.carousel-control-next {
+    right: 0;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-size: 60% 60%;
+    filter: invert(1); 
+}
 /* ///////////////////////////Featured book style//////////////////////// */
  .featured-body {
             background-color: #f8f9fa;
         }
-
         .card-title {
             font-family: sans-serif;
             color: rgb(18, 2, 81);
