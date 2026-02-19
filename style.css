@@ -7,6 +7,103 @@
 .text-blue{
     color: #393280;
 }
+/* ///////////////////////////Featured book style//////////////////////// */
+ .featured-body {
+            background-color: #f8f9fa;
+        }
+
+        .card-title {
+            font-family: sans-serif;
+            color: rgb(18, 2, 81);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .text-dark-orange {
+            color: #cc5500;
+        }
+
+        .card-custom {
+            background-color: #F5F5F3;
+            transition: transform 0.3s ease;
+        }
+
+        .card-custom:hover {
+            transform: scale(1.01);
+        }
+
+        .card-text {
+            color: rgb(18, 2, 81);
+        }
+
+        .img-fit {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .mlogn {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            max-width: 100%;
+        }
+
+        .login-btn {
+            flex: 1;
+            padding: 10px 15px;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: 1.3px solid rgb(18, 2, 81);
+            background-color: transparent;
+            color: rgb(18, 2, 81);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .login-btn:hover {
+            background-color: rgb(18, 2, 81);
+            color: white;
+        }
+
+        .star {
+            cursor: pointer;
+            font-size: 20px;
+            transition: 0.2s;
+        }
+
+        .star:hover {
+            transform: scale(1.2);
+        }
+
+        /* Responsive ui and mobile menu */
+        @media (max-width: 768px) {
+            .card {
+                flex-direction: column;
+            }
+
+            .img-fit {
+                height: 200px;
+            }
+
+            .card-title {
+                font-size: 1.5rem;
+            }
+
+            .mlogn {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card-title {
+                font-size: 1.3rem;
+            }
+
+            .card-text {
+                font-size: 0.9rem;
+            }
+        }
 /* //////////////////////////blog style////////////////////////////////// */
 .blog-body { background-color: #f8f9fa; }
   .img-small {
