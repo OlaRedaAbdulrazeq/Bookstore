@@ -55,3 +55,107 @@ let quantity = 1;
         function toggleDarkMode() {
         document.body.classList.toggle('dark-mode');
         }
+///////////////////////log in //////////////////////////////////////
+//connection of api and supa base
+   const API_url="https://dqcddwgtbiowtymwxtur.supabase.co/rest/v1/Log_in"
+        const API_key="sb_publishable_TND3y-Rt4NF0o50wJiTRbw_bhBR5WIS"
+            const headers={
+      "apikey":API_key,
+   "Authorization": "Bearer"+API_key,
+   "Content-Type":"application/json"
+            }
+      async function getLogin(){
+               let login= await fetch (API_url,{headers})
+               let login_res= await login.json()
+               console.log(login_res)
+               let table=document.getElementById("loginTable")
+              
+      }
+         //  function to add  email and password once logged in
+           async function addLogin(e){
+   
+            let email=document.getElementById("email").value
+    let password=document.getElementById("password").value
+           
+          
+      
+let login={
+   "email":email,
+"password": password
+}
+let result=await fetch(API_url,{method:"post",body:JSON.stringify(login),headers})
+        
+console.log(result.status)
+        
+if(result.status==201){
+    getLogin()
+}
+else{
+    console.log("error")
+}
+}
+// function log in to verify that email and password exists using api
+async function loginUser() {
+
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password").value;
+  
+
+  const response = await fetch(
+    API_url + "?email=eq." + email,
+    { headers: headers }
+  );
+
+  const data = await response.json();
+
+  console.log(data);
+
+
+  if (data.length === 0) {
+    message.textContent = "User not found!";
+        message.style.color = "red";
+    return;
+  }
+
+  if (data[0].password !== password) {
+    message.textContent = "Incorrect password!";
+    message.style.color = "red";
+     
+    return;
+  }
+
+
+   message.textContent = "Login successful!";
+  message.style.color = "green";
+}
+
+
+
+// function to display error message if the email is empty or password is left empty
+
+   function emailVer() {
+
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    let password_error = document.getElementById("password_error");
+    let email_error = document.getElementById("email_error");
+
+    email_error.style.color = "red";
+    password_error.style.color = "red";
+
+    if (email === "") {
+        email_error.textContent = "Email is required";
+        email_error.hidden = false;
+    } else {
+        email_error.hidden = true;
+    }
+
+    if (password === "") {
+        password_error.textContent = "Password is required";
+        password_error.hidden = false;
+    } else {
+        password_error.hidden = true;
+    }
+
+    console.log("done");
+}
