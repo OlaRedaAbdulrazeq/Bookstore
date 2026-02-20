@@ -193,13 +193,9 @@
                         <h6 class="text-dark-orange fw-bold fs-5 mb-2">
                             $ <span id="price">45</span>
                         </h6>
-            <!--quaninty of items starting from 1 to as much as u want-->
+        
                         
-                        <div class="d-flex align-items-center gap-2 mb-2">
-                            <button class="btn btn-outline-dark btn-sm" onclick="changeQty(-1)">-</button>
-                            <span id="quantity">1</span>
-                            <button class="btn btn-outline-dark btn-sm" onclick="changeQty(1)">+</button>
-                        </div>
+                       
 
                         <p class="fw-bold mb-3">
                             Total: $ <span id="total">45</span>
@@ -218,12 +214,7 @@
                     
              <div class="mlogn mb-3">
 
-    <div class="text-start">
-        <input type="button"
-               value="Add to Cart"
-               class="featured-btn mb-4"
-               onclick="addToCart()">
-    </div>
+  
 
     <div class="text-center">
         <a href="product.html" class="featured-btn">
@@ -234,9 +225,7 @@
 </div>
 
                     
-                        <div id="alertBox" class="alert alert-success d-none mt-2">
-                            Book added to cart successfully!
-                        </div>
+    
 
                     </div>
                 </div>
@@ -247,7 +236,7 @@
         <div class="container mt-4">
         <h2 class="text-center mb-4">Read our many Blogs</h2>
         <div class="d-flex justify-content-end my-3">
-       <button id="darkModeBtnBlog" class="btn btn-secondary" onclick="toggleDarkMode('blogSection')">🌙 Dark Mode</button>
+      
 
         </div>
         <!-- Search Bar that u can filter in blog name -->
@@ -262,11 +251,11 @@
             <div class="card text-white position-relative">
                 <img class="img-small card-img" src="assets/bl1.jpeg" alt="Top Author">
                 <div class="card-img-overlay d-flex flex-column justify-content-end p-3" style="background: rgba(0,0,0,0.3);">
-                <h4 class="blog-card-title">Learn about this week&#39;s Top Author</h4>
+                <h4 class="blog-card-titleb">Learn about this week's Top Author</h4>
                 <p class="card-text">Jump start your book reading by quickly checking through popular book categories.</p>
                 </div>
             
-                <a href="#" class="btn-blog center-btn" onclick="openModal('Learn about this week\'s Top Author','Jump start your book reading by quickly checking through popular book categories.')">Read More</a>
+                <a href="#" class="btn-blog center-btn" onclick="openModal('Learn about this weeks Top Author','Jump start your book reading by quickly checking through popular book categories.')">Read More</a>
             </div>
             </div>
 
@@ -319,7 +308,7 @@
         </div>
         </div>
     </section>
-    <!-- Log in  -->
+    <!-- the section of Log in  -->
     <section class="login-body">
         <!--image and containerr-->
         <div class="container mt-5">
@@ -353,11 +342,9 @@
                 <input type="button" value="Log in" class="login-btn" onclick="loginUser()">
                 <p id="message"></p>
                 <!-- this is the new sign up link -->
-    <p id="signupLink" class="text-center mt-3 d-none">
-    Don't have an account?
-    <a href="signup.html">Click here to sign up</a>
-</p>
-
+    <a class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#signupModal" id="signupLink">
+  Register Now
+</a>
 </div>
             </div>
             <div id="email_error" hidden></div>
@@ -450,7 +437,44 @@
     </div>
   </main>
   </section>
-
+<div class="modal fade alert" id="signupModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Registering to Bookstore</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body ">
+        <form id="signup" class="row gap-3">
+            <div class="form-floating">
+                <input type="text" class="form-control" id="name" placeholder="Ex:ola">
+                <label for="name" class="ps-3">Your Name</label>
+                <span id="name-error" class="text-danger"></span>
+            </div>
+            <div class="form-floating">
+                <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                <label for="email"class="ps-3">Email address</label>
+                <span id="email-error" class="text-danger"></span>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" id="password" placeholder="Password">
+                <label for="password" class="ps-3">Password</label>
+                <span id="password-error" class="text-danger"></span>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" id="confirm-password" placeholder="Confirm Password">
+                <label for="confirm-password" class="ps-3">Re-enter Password</label>
+                <span id="confirm-password-error" class="text-danger"></span>
+            </div>
+            <div class="d-flex justify-content-center">
+                <button class="btn bg-orange text-light px-5" type="submit" >Register Now</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+        <div id="alert" class="position-absolute top-0 end-0 col-6 col-md-3 text-center m-2"></div>
+</div>
   <!-- Footer -->
   
    <!--this the footer of all page not done by me-->

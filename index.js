@@ -64,12 +64,7 @@ let quantity = 1;
         }
     });
 }
-       function toggleDarkMode(sectionId) {
-    const section = document.getElementById(sectionId);
-    if (section) {
-        section.classList.toggle('dark-mode');
-    }
-}
+      
 
 
         
@@ -168,7 +163,11 @@ async function loginUser() {
   emailInput.value = "";
   passwordInput.value = "";
 }
-
+ocument.addEventListener("DOMContentLoaded", function() {
+    const modalEl = document.getElementById("signupModal");
+    const modal = new bootstrap.Modal(modalEl);
+    modal.hide(); 
+});
 
 // function to display error message if the email is empty or password is left empty
 
