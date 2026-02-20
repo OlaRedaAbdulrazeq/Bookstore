@@ -44,17 +44,35 @@ let quantity = 1;
         }
 
         // Filter i did to type the blog to display the only one 
-        function filterBlogs() {
-            const input = document.getElementById('search').value.toLowerCase();
-            const cards = document.querySelectorAll('.blog-card');
-            cards.forEach(card => {
-            const title = card.querySelector('.card-title').innerText.toLowerCase();
-            card.style.display = title.includes(input) ? 'block' : 'none';
-            });
+       function filterBlogs() {
+    const input = document.getElementById('search').value.toLowerCase();
+    const cards = document.querySelectorAll('.blog-card');
+
+    cards.forEach(card => {
+
+      
+        const titleElement = card.querySelector('h4');
+
+        if (!titleElement) return;
+
+        const title = titleElement.innerText.toLowerCase();
+
+        if (title.includes(input)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
         }
-        function toggleDarkMode() {
-        document.body.classList.toggle('dark-mode');
-        }
+    });
+}
+       function toggleDarkMode(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+        section.classList.toggle('dark-mode');
+    }
+}
+
+
+        
 ///////////////////////log in //////////////////////////////////////
 //connection of api and supa base
    const API_url="https://dqcddwgtbiowtymwxtur.supabase.co/rest/v1/Log_in"
@@ -97,9 +115,17 @@ else{
 // function log in to verify that email and password exists using api
 async function loginUser() {
 
-  let email = document.getElementById("email").value;
-  let password = document.getElementById("password").value;
-  
+  const emailInput = document.getElementById("email");
+  const passwordInput = document.getElementById("password");
+
+  let email = emailInput.value;
+  let password = passwordInput.value;
+
+  const message = document.getElementById("message");
+  const signupLink = document.getElementById("signupLink");
+
+  // Hide signup link by default since not useful now
+  signupLink.classList.add("d-none");
 
   const response = await fetch(
     API_url + "?email=eq." + email,
@@ -110,25 +136,38 @@ async function loginUser() {
 
   console.log(data);
 
-
   if (data.length === 0) {
-    message.textContent = "User not found!";
-        message.style.color = "red";
+    message.textContent = "Account doesn't exist!";
+    message.style.color = "red";
+    signupLink.classList.remove("d-none");
+    
+    // Clear input fields
+    emailInput.value = "";
+    passwordInput.value = "";
     return;
   }
 
   if (data[0].password !== password) {
     message.textContent = "Incorrect password!";
     message.style.color = "red";
-     
+
+    // Clear input  after incorrect password fields
+    emailInput.value = "";
+    passwordInput.value = "";
     return;
   }
 
-
-   message.textContent = "Login successful!";
+  message.textContent = "Login successful!";
   message.style.color = "green";
-}
 
+  // Save to localStorage can check on the application bar in inspect
+  localStorage.setItem("userEmail", email);
+  localStorage.setItem("userPassword", password);
+
+  // Clear input fields after successful login
+  emailInput.value = "";
+  passwordInput.value = "";
+}
 
 
 // function to display error message if the email is empty or password is left empty
