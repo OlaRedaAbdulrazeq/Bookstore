@@ -166,8 +166,8 @@ form.addEventListener("submit",async function(e){
     if(nameIsValid()&&emailOk&&passwordIsValid()&&confirmedPassword()){
         const userData ={
         name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        password: document.getElementById("password").value
+        email: document.getElementById("signup-email").value,
+        password: document.getElementById("signup-password").value
     }
     let response = await fetch(URI+"Users",{method:"post",headers:header,body:JSON.stringify(userData)})
         
