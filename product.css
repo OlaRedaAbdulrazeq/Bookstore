@@ -1,0 +1,64 @@
+.bg-orange{
+    background-color: #ED553B;
+}
+.text-orange{
+    color:#ED553B;
+}
+.bg-blue{
+    background-color: #393280;
+}
+.text-blue{
+    color: #393280;
+}
+.btn.bg-orange:hover,
+.btn.bg-orange:active {
+    background-color: #ED553B !important;
+    color: #fff !important;
+    box-shadow: none; /* optional: remove Bootstrap focus shadow */
+}
+/* /////////////////add to cart style //////////////// */
+.addtocart-img-wrapper .button-overlay {
+    padding-top: 60%;
+    opacity: 0;                     
+    transition: opacity 0.5s ease;
+}
+.addtocart-img-wrapper:hover .button-overlay {
+     opacity: 1;                     
+}
+/* //////////////////////show/hide description ///////////////*/
+#BookDescription {
+    max-height: 100px;
+    overflow-y: scroll;
+}
+/* ////////////////////cart modal //////////////////////*/
+
+.cart-img-wrapper {
+    width: 80px;           
+    height: 100%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px;
+}
+
+@media (min-width: 576px) {
+    .cart-img-wrapper {
+        width: 120px;
+    }
+}
+
+.modal-item {
+    min-height: 7rem;
+}
+.accordion-button {
+    background-color: white !important;
+    color: black !important;
+}
+  /* ////Accrodion inside cart modal */
+
+.accordion-button,
+.accordion-button:not(.collapsed) {
+    background-color: white !important;
+    color: black !important;
+    box-shadow: none !important;
+}
