@@ -52,8 +52,8 @@ let validateName=function(){
 }
 //email validation
 let validateEmail = function(){
-    let email = document.getElementById("email")
-    let errorMsg=document.getElementById("email-error");
+    let email = document.getElementById("signup-email")
+    let errorMsg=document.getElementById("signup-email-error");
     let validEmail = function(){
         let regex=/^[a-z][a-z0-9]*@[a-z]+\.com$/
         if (!email.value.trim()){
@@ -88,9 +88,9 @@ let validateEmail = function(){
        }
     }
     email.addEventListener("input",validEmail);
-    email.addEventListener("blur",function(){
+    email.addEventListener("blur",async function(){
         if(validEmail()){
-            foundEmail();
+           await foundEmail();
         }
     })
     return {
@@ -100,8 +100,8 @@ let validateEmail = function(){
 }
 //password validation
 let validatePassword=function(){
-    let password= document.getElementById("password");
-    let errorMsg= document.getElementById("password-error");
+    let password= document.getElementById("signup-password");
+    let errorMsg= document.getElementById("signup-password-error");
     let regex=/^(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]).*$/
     let validPassword=function(){
         if(!password.value.trim()){
@@ -133,7 +133,7 @@ let confirmPassword =function(){
     let confirm = document.getElementById("confirm-password");
     let errorMsg=document.getElementById("confirm-password-error");
     let validConfirm = function(){
-        let pass=document.getElementById("password").value;
+        let pass=document.getElementById("signup-password").value;
         if(!confirm.value.trim()){
             errorMsg.textContent="required field";
             confirm.classList.add("is-invalid");
@@ -160,7 +160,10 @@ let confirmedPassword=confirmPassword();
 form.addEventListener("submit",async function(e){
     e.preventDefault();
     let alert=document.getElementById("alert")
-    if(nameIsValid()&&isValidEmail()&& await isFoundEmail()&&passwordIsValid()&&confirmedPassword()){
+    // i did this so not to hit the server when the format is invalid
+    let emailOk=isValidEmail()? await isFoundEmail() : false;
+   
+    if(nameIsValid()&&emailOk&&passwordIsValid()&&confirmedPassword()){
         const userData ={
         name: document.getElementById("name").value,
         email: document.getElementById("email").value,
@@ -169,7 +172,7 @@ form.addEventListener("submit",async function(e){
     let response = await fetch(URI+"Users",{method:"post",headers:header,body:JSON.stringify(userData)})
         
         if(response.status===201){
-            form.submit();
+            location.href="../pages/product.html"
             alert.innerHTML=`
             <div class="alert alert-success" role="alert">
                 successfully registered
@@ -189,7 +192,6 @@ form.addEventListener("submit",async function(e){
             alert.innerHTML = "";
         }, 3000);
     }
-
 })
 ////////////////////////Featured book logic//////////////////////////////
 let quantity = 1;
@@ -301,11 +303,11 @@ async function loginUser() {
   // Hide signup link by default since not useful now
   signupLink.classList.add("d-none");
 
-  const response = await fetch(`${URI}Users?email=eq.${email}`,{ headers: headers });
+  const response = await fetch(`${URI}Users?email=eq.${email}`,{ headers: header });
 
   const data = await response.json();
 
-  console.log(data);
+//   console.log(data);
 
   if (data.length === 0) {
     message.textContent = "Account doesn't exist!";
@@ -330,6 +332,7 @@ async function loginUser() {
 
   message.textContent = "Login successful!";
   message.style.color = "green";
+  location.href="../pages/product.html"
 
   // Save to localStorage can check on the application bar in inspect
   localStorage.setItem("userEmail", email);
@@ -339,7 +342,7 @@ async function loginUser() {
   emailInput.value = "";
   passwordInput.value = "";
 }
-ocument.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() {
     const modalEl = document.getElementById("signupModal");
     const modal = new bootstrap.Modal(modalEl);
     modal.hide(); 
