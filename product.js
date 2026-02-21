@@ -259,7 +259,12 @@ function updateCartIcons() {
     
     let totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
     let totalPrice = cart.reduce((sum, item) => sum + (item.quantity * item.price), 0);
-    cartCount.textContent = totalItems;
+    if(!totalItems || totalItems===0 ){
+        cartCount.hidden=true;
+    }else{
+        cartCount.textContent = totalItems;
+    }
+    
     cartTotal.textContent = totalPrice;
     total.textContent=`Price Summary : $${totalPrice}`;
     quantity.textContent=`Total Quantities : ${totalItems}`
@@ -269,8 +274,8 @@ function updateCartIcons() {
     if(cart.length===0){
         document.getElementById("addToCartModal").innerHTML=`Empty Cart`
     }else{
-          for (book of cart){
-    document.getElementById("modalRow").innerHTML+=`
+        for (book of cart){
+        document.getElementById("modalRow").innerHTML+=`
     <div class="col-12 col-sm-7 g-0 card  flex-md-row justify-content-between align-items-center border-0 shadow mb-3 modal-item">
         <div class="cart-img-wrapper">
             <img src=${book.cover} class="object-fit-contain img-fluid p-2" alt="the book cover">
@@ -282,7 +287,7 @@ function updateCartIcons() {
         </div>
     </div>
 `
-}
+       }
     }
   
 
