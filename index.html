@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -229,7 +229,7 @@
                     <p id="message"></p>
                     <!-- this is the new sign up link -->
     
-    <a  class="text-orange text-decoration-none" data-bs-toggle="modal" data-bs-target="#signupModal" id="signupLink">
+    <a  class="text-blue text-decoration-none" data-bs-toggle="modal" data-bs-target="#signupModal" id="signupLink" style="cursor:pointer">
     Register Now
     </a>
     </div>
@@ -381,7 +381,7 @@
                     </button>
                 </div>
             </div>
-            <p class="d-flex justify-content-end align-items-baseline gap-2 text-orange pt-3"> view more products <i class="fa-solid fa-arrow-right"></i></p>
+            <a class="d-flex justify-content-end align-items-baseline gap-2 text-orange pt-3 text-decoration-none" href="pages/product.html"> view more products <i class="fa-solid fa-arrow-right"></i></a>
         </section>
         <!-- Featured Book -->
          <section class="featured-body">
@@ -430,7 +430,7 @@
   
 
     <div class="text-center">
-        <a href="product.html" class="featured-btn">
+        <a href="pages/product.html" class="featured-btn">
             View More ─>
         </a>
     </div>
@@ -608,7 +608,7 @@
         </section>
     </main>
 
-  <!-- Modal for signing up -->
+<!-- Modal -->
 <div class="modal fade alert" id="signupModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
@@ -624,14 +624,14 @@
                 <span id="name-error" class="text-danger"></span>
             </div>
             <div class="form-floating">
-                <input type="email" class="form-control" id="email" placeholder="name@example.com">
-                <label for="email"class="ps-3">Email address</label>
-                <span id="email-error" class="text-danger"></span>
+                <input type="email" class="form-control" id="signup-email" placeholder="name@example.com">
+                <label for="signup-email"class="ps-3">Email address</label>
+                <span id="signup-email-error" class="text-danger"></span>
             </div>
             <div class="form-floating">
-                <input type="password" class="form-control" id="password" placeholder="Password">
-                <label for="password" class="ps-3">Password</label>
-                <span id="password-error" class="text-danger"></span>
+                <input type="password" class="form-control" id="signup-password" placeholder="Password">
+                <label for="signup-password" class="ps-3">Password</label>
+                <span id="signup-password-error" class="text-danger"></span>
             </div>
             <div class="form-floating">
                 <input type="password" class="form-control" id="confirm-password" placeholder="Confirm Password">
@@ -690,7 +690,7 @@
             
         </div>
     </footer>
-    <script src="index.js"></script>
+    <script src="js/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
