@@ -10,13 +10,13 @@
 .text-blue{
     color: #393280;
 }
+/* /////////////////add to cart style //////////////// */
 .btn.bg-orange:hover,
 .btn.bg-orange:active {
     background-color: #ED553B !important;
     color: #fff !important;
-    box-shadow: none; /* optional: remove Bootstrap focus shadow */
+    box-shadow: none;
 }
-/* /////////////////add to cart style //////////////// */
 .addtocart-img-wrapper .button-overlay {
     padding-top: 60%;
     opacity: 0;                     
