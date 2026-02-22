@@ -303,6 +303,14 @@ async function loginUser() {
   // Hide signup link by default since not useful now
   signupLink.classList.add("d-none");
 
+  if (email === "admin@admin.com" && password === "admin@123") {
+    message.textContent = "Admin login successful!";
+    message.style.color = "green";
+    document.getElementById("main").style.display="none";
+    document.getElementById("dashboard").classList.remove("d-none");
+    return;
+  }
+
   const response = await fetch(`${URI}Users?email=eq.${email}`,{ headers: header });
 
   const data = await response.json();
