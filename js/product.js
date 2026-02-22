@@ -34,7 +34,6 @@ async function getBooks(page,size){
     const response =await fetch(`${URI}?select=*&limit=${size}&offset=${offset}`,{headers:header}) 
     return await response.json()
 }
-
     //append books 
 function appendBooks(data){
     let booksContainer = document.getElementById("showBook");
@@ -157,9 +156,7 @@ document.getElementById("showBook").addEventListener("click", async function(e) 
         alert("Book details not found!");
     }
 });
-
 // search by title 
-
 async function search(keyword){
    let response = await fetch(`${URI}?title=ilike.*${keyword}*`,{headers: header})
     return await response.json();
@@ -196,7 +193,6 @@ async function filterBy(state){
    return await response.json()
 }
 
-    
 document.getElementById("sidebar").addEventListener("click",async function(e){
     if (!["high-low","low-high","A-Z","Z-A"].includes(e.target.id)) return;
     filterActive = true;
@@ -271,24 +267,73 @@ function updateCartIcons() {
 }
 
 //drawing the cart modal
-    if(cart.length===0){
-        document.getElementById("addToCartModal").innerHTML=`Empty Cart`
-    }else{
-        for (book of cart){
-        document.getElementById("modalRow").innerHTML+=`
-    <div class="col-12 col-sm-7 g-0 card  flex-md-row justify-content-between align-items-center border-0 shadow mb-3 modal-item">
-        <div class="cart-img-wrapper">
-            <img src=${book.cover} class="object-fit-contain img-fluid p-2" alt="the book cover">
-        </div>
-        <div class="card-body align-self-start">
-            <h5 class="card-title">${book.title}</h5>
-            <p class="text-blue">quantity: ${book.quantity}</p>
-            <h6 class="text-orange">total price: $${book.price * book.quantity}</h6>
-        </div>
-    </div>
-`
-       }
+if(cart.length===0){
+    document.getElementById("addToCartModal").innerHTML=`<div class="text-center fs-3">Empty Cart</div>`
+}else{
+    for (book of cart){
+    document.getElementById("modalRow").innerHTML += `
+            <div class="col-10 col-sm-8 col-lg-7 mx-auto card flex-column flex-md-row align-items-center border-0 shadow mb-3 modal-item p-2" data-id="${book.id}">
+                <div class="text-center mb-2 mb-md-0" style="max-width: 120px; flex-shrink: 0;">
+                    <img src="${book.cover}" class="img-fluid object-fit-contain p-2" alt="the book cover">
+                </div>
+                <div class="card-body text-center text-md-start w-100">
+                    <h5 class="card-title mb-2">${book.title}</h5>
+                    <div class="d-flex justify-content-center justify-content-md-start align-items-center mb-2 gap-2">
+                        <button class="btn btn-sm quantity-decrease">
+                            <i class="fa-solid fa-minus"></i>
+                        </button>
+                        <span class="text-blue fw-semibold quantity-value">${book.quantity}</span>
+                        <button class="btn btn-sm quantity-increase">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+                    <h6 class="text-orange total-price mb-0">
+                        total price: $${book.price * book.quantity}
+                    </h6>
+                </div>
+                <div class="ms-md-3 mt-2 mt-md-0 text-center text-md-start">
+                    <i class="delete-item fa-solid fa-trash fs-5 pe-md-5" style="cursor:pointer"></i>
+                </div>
+            </div>
+            `
     }
+}
+document.querySelectorAll(".modal-item").forEach(item => {
+    const id = item.getAttribute("data-id");
+    const quantityValue = item.querySelector(".quantity-value");
+    const totalPrice = item.querySelector(".total-price");
+    const btnPlus = item.querySelector(".quantity-increase");
+    const btnMinus = item.querySelector(".quantity-decrease");
+    const btnDelete = item.querySelector(".delete-item");
+    // Increase the quantity
+    btnPlus.addEventListener("click", () => {
+        let book = cart.find(book => book.id == id);
+        book.quantity++;
+        quantityValue.textContent = book.quantity;
+        totalPrice.textContent = `total price: $${book.price * book.quantity}`;
+        localStorage.setItem("cart", JSON.stringify(cart)); 
+        updateCartIcons();
+    });
+    // Decrease the quantity
+    btnMinus.addEventListener("click", () => {
+        let book = cart.find(book => book.id == id);
+        if (book.quantity > 1) {
+            book.quantity--;
+            quantityValue.textContent = book.quantity;
+            totalPrice.textContent = `total price: $${book.price * book.quantity}`;
+            localStorage.setItem("cart", JSON.stringify(cart)); 
+            updateCartIcons();
+        }
+    });
+    // Delete cart item
+    btnDelete.addEventListener("click", () => {
+        let index = cart.findIndex(book => book.id == id);
+        cart.splice(index, 1);
+        item.remove();
+        localStorage.setItem("cart", JSON.stringify(cart)); 
+        updateCartIcons();
+    });
+});
   
 
 
