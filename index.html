@@ -71,7 +71,7 @@
         </nav>
 
     </header>
-    <main>
+    <main id="main">
         <!-- Home page -->
         <section class="container-fluid container-md g-0">
             <div class="row g-0 align-items-center justify-content-center">
@@ -520,32 +520,29 @@
                 </div>
             </div>
             </div>
-        </section>
-           <!-- Dashboard section -->
-        <section class="dashboard">
+        </section>      
+    </main>
+     <!-- Dashboard section -->
+   <main class="dashboard d-none" id="dashboard">
         <header class="container-fluid">
     </header>
-
-    
-    <main class="container my-5">
-        <h2 class="text-center mb-4 text-dark-orange fw-bold">Welcome, <span id="userName">Reader</span></h2>
-
+    <section class="container my-5">
+        <h2 class="text-center mb-4 text-dark-orange fw-bold">Welcome, <span id="userName">Admin</span></h2>
         <div class="row">
-        
         <div class="col-md-3 mb-4">
             <div class="list-group">
             <a href="#" class="list-group-item list-group-item-action active">Dashboard</a>
             <a href="#" class="list-group-item list-group-item-action">My Orders</a>
             <a href="#" class="list-group-item list-group-item-action">Wishlist</a>
-    <a href="index.html" class="list-group-item list-group-item-action">Log Out</a>
+            <a href="index.html" class="list-group-item list-group-item-action">Log Out</a>
             </div>
         </div>
 
         
-        <div class="col-md-9">
-            <div class="card mb-3 p-3 shadow-sm">
+        <div class="col-12 col-md-9">
+            <div class="card mb-3 p-md-3 shadow-sm">
             <h5 class="mb-3">Recent Orders</h5>
-            <table class="table table-striped">
+            <table class="table table-striped ">
                 <thead>
                 <tr>
                     <th>Order ID</th>
@@ -604,9 +601,8 @@
             </div>
         </div>
         </div>
-    </main>
-        </section>
-    </main>
+    </section>
+        </main>
 
 <!-- Modal -->
 <div class="modal fade alert" id="signupModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
