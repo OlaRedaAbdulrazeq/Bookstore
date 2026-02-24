@@ -74,6 +74,7 @@ and JavaScript, with authentication powered by Supabase.
 -   **HTML5**
 -   **CSS3**
 -   **Bootstrap 5**
+-   **Font awsome Icons**
 -   **JavaScript (ES6)**
 -   **Supabase Authentication**
 -   **localStorage API**
